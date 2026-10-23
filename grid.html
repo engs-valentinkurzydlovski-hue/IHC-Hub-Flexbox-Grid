@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Introdução ao Grid</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+
+    <header>
+        <h1>Introdução ao CSS Grid</h1>
+        <p>Aprenda a criar layouts com linhas e colunas</p>
+        <a href="index.html">Voltar ao início</a>
+    </header>
+
+    <main>
+        <section>
+            <h2>O que é CSS Grid?</h2>
+            <p>
+                O CSS Grid é um recurso que permite organizar elementos
+                em duas dimensões, trabalhando com linhas e colunas.
+                É muito útil para criar layouts completos de páginas.
+            </p>
+        </section>
+
+        <section>
+            <h2>1. Display Grid</h2>
+            <p>
+                A propriedade <code>display: grid;</code> transforma
+                um elemento em um contêiner de grade.
+            </p>
+
+            <div class="exemplo-grid grade-tres">
+                <div class="item-grid">Item 1</div>
+                <div class="item-grid">Item 2</div>
+                <div class="item-grid">Item 3</div>
+                <div class="item-grid">Item 4</div>
+                <div class="item-grid">Item 5</div>
+                <div class="item-grid">Item 6</div>
+            </div>
+
+            <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>2. Grid Template Columns</h2>
+            <p>
+                A propriedade <code>grid-template-columns</code>
+                define a quantidade e a largura das colunas.
+                O valor <code>1fr</code> representa uma fração
+                do espaço disponível.
+            </p>
+
+            <h3>Duas colunas</h3>
+            <div class="exemplo-grid grade-duas">
+                <div class="item-grid">Coluna 1</div>
+                <div class="item-grid">Coluna 2</div>
+                <div class="item-grid">Coluna 1</div>
+                <div class="item-grid">Coluna 2</div>
+            </div>
+
+            <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>3. Grid Gap</h2>
+            <p>
+                A propriedade <code>gap</code> define o espaço
+                entre as linhas e as colunas da grade.
+            </p>
+
+            <div class="exemplo-grid grade-tres com-espaco">
+                <div class="item-grid">1</div>
+                <div class="item-grid">2</div>
+                <div class="item-grid">3</div>
+                <div class="item-grid">4</div>
+                <div class="item-grid">5</div>
+                <div class="item-grid">6</div>
+            </div>
+
+            <pre><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>4. Grid Template Areas</h2>
+            <p>
+                Com <code>grid-template-areas</code>, podemos nomear
+                regiões e definir onde cada parte da página ficará.
+            </p>
+
+            <div class="layout-areas">
+                <div class="area-header">Cabeçalho</div>
+                <div class="area-menu">Menu</div>
+                <div class="area-conteudo">Conteúdo principal</div>
+                <div class="area-footer">Rodapé</div>
+            </div>
+
+            <pre><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+        "cabecalho cabecalho"
+        "menu conteudo"
+        "rodape rodape";
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>Quando utilizar Grid?</h2>
+            <ul>
+                <li>Para criar layouts de páginas inteiras.</li>
+                <li>Para organizar galerias de imagens.</li>
+                <li>Para montar painéis com linhas e colunas.</li>
+                <li>Para posicionar áreas específicas de um site.</li>
+            </ul>
+        </section>
+
+        <nav class="navegacao-paginas">
+            <a href="flexbox.html">← Página anterior: Flexbox</a>
+            <a href="index.html">Voltar ao início</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Hub de Aulas - HTML & CSS</p>
+    </footer>
+
+</body>
+</html>
