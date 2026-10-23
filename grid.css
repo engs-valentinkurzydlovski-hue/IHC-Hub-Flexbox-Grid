@@ -1,0 +1,141 @@
+
+.exemplo-grid {
+    display: grid;
+    gap: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    background: rgba(0, 216, 255, 0.08);
+    border: 1px solid #00d8ff;
+    border-radius: 8px;
+}
+
+.grade-tres {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grade-duas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.item-grid {
+    background: #00b8e0;
+    color: #1e1e2f;
+    padding: 20px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.com-espaco {
+    gap: 20px;
+}
+
+.layout-areas {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+        "cabecalho cabecalho"
+        "menu conteudo"
+        "rodape rodape";
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.area-header {
+    grid-area: cabecalho;
+}
+
+.area-menu {
+    grid-area: menu;
+}
+
+.area-conteudo {
+    grid-area: conteudo;
+}
+
+.area-footer {
+    grid-area: rodape;
+}
+
+.area-header,
+.area-menu,
+.area-conteudo,
+.area-footer {
+    background: #00b8e0;
+    color: #1e1e2f;
+    padding: 20px 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+pre {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+pre code {
+    background: transparent;
+    padding: 0;
+}
+
+main h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #00d8ff;
+}
+
+
+.navegacao-paginas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.navegacao-paginas a {
+    display: inline-block;
+    color: #00d8ff;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #00d8ff;
+    border-radius: 6px;
+    background-color: #1e1e2f;
+    transition: 0.2s;
+}
+
+.navegacao-paginas a:hover {
+    background-color: #00d8ff;
+    color: #1e1e2f;
+}
+
+
+main ul {
+    padding-left: 25px;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .grade-tres {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .layout-areas {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "cabecalho"
+            "menu"
+            "conteudo"
+            "rodape";
+    }
+
+    .navegacao-paginas {
+        flex-direction: column;
+    }
+}
